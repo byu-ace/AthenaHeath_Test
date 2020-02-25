@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AetheanProviderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="ImportAtheanProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="adi">
+          <Parameter Name="AcceptingnewPatients" Type="bit" Mode="In" />
+          <Parameter Name="AnsinameCode" Type="varchar" Mode="In" />
+          <Parameter Name="AnsispecialtyCode" Type="varchar" Mode="In" />
+          <Parameter Name="Billable" Type="bit" Mode="In" />
+          <Parameter Name="CreateenCounteronCheckin" Type="bit" Mode="In" />
+          <Parameter Name="DisplayName" Type="varchar" Mode="In" />
+          <Parameter Name="EntityType" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="HideInPortal" Type="bit" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="ProviderID" Type="varchar" Mode="In" />
+          <Parameter Name="ProviderType" Type="varchar" Mode="In" />
+          <Parameter Name="ProviderTypeId" Type="varchar" Mode="In" />
+          <Parameter Name="SchedulingName" Type="varchar" Mode="In" />
+          <Parameter Name="Specialty" Type="varchar" Mode="In" />
+          <Parameter Name="SupervisingProviderID" Type="int" Mode="In" />
+          <Parameter Name="SupervisingProviderUserName" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="AetheanProviderModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AetheanProviderModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AetheaProviderEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="ImportAtheanProvider">
+            <Parameter Name="AcceptingnewPatients" Mode="In" Type="Boolean" />
+            <Parameter Name="AnsinameCode" Mode="In" Type="String" />
+            <Parameter Name="AnsispecialtyCode" Mode="In" Type="String" />
+            <Parameter Name="Billable" Mode="In" Type="Boolean" />
+            <Parameter Name="CreateenCounteronCheckin" Mode="In" Type="Boolean" />
+            <Parameter Name="DisplayName" Mode="In" Type="String" />
+            <Parameter Name="EntityType" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="HideInPortal" Mode="In" Type="Boolean" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="ProviderID" Mode="In" Type="String" />
+            <Parameter Name="ProviderType" Mode="In" Type="String" />
+            <Parameter Name="ProviderTypeId" Mode="In" Type="String" />
+            <Parameter Name="SchedulingName" Mode="In" Type="String" />
+            <Parameter Name="Specialty" Mode="In" Type="String" />
+            <Parameter Name="SupervisingProviderID" Mode="In" Type="Int32" />
+            <Parameter Name="SupervisingProviderUserName" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AetheanProviderModelStoreContainer" CdmEntityContainer="AetheaProviderEntities" >
+          <FunctionImportMapping FunctionImportName="ImportAtheanProvider" FunctionName="AetheanProviderModel.Store.ImportAtheanProvider" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
