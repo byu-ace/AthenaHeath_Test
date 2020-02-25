@@ -183,88 +183,70 @@ public class Testing
             if (pro.SelectToken("acceptingnewpatients") != null)
             {
                    AcceptingnewPatients = System.Convert.ToBoolean(pro.SelectToken("acceptingnewpatients"));
-                   // AethenalealthProvider.AcceptingnewPatients = System.Convert.ToBoolean(pro.SelectToken("acceptingnewpatients"));
             }
             if (pro.SelectToken("ansinamecode") != null)
             {
                     AnsinameCode = (string)pro.SelectToken("ansinamecode"); 
-                  //  AethenalealthProvider.AnsinameCode = (string)pro.SelectToken("ansinamecode");
             }
             if (pro.SelectToken("ansispecialtycode") != null)
             {
-                  //  AethenalealthProvider.AnsispecialtyCode = (string)pro.SelectToken("ansispecialtycode");
                   AnsispecialtyCode = (string)pro.SelectToken("ansispecialtycode");
                 }
             if (pro.SelectToken("billable") != null)
             {
                     Billable = System.Convert.ToBoolean(pro.SelectToken("billable"));
-                    //AethenalealthProvider.Billable = System.Convert.ToBoolean(pro.SelectToken("billable"));
                 }
             if (pro.SelectToken("createencounteroncheckin") != null)
             {
                     CreateenCounteronCheckin = System.Convert.ToBoolean(pro.SelectToken("createencounteroncheckin"));
-                    //AethenalealthProvider.CreateenCounteronCheckin = System.Convert.ToBoolean(pro.SelectToken("createencounteroncheckin"));
                 }
             if (pro.SelectToken("displayname") != null)
             {
                   DisplayName = (string)pro.SelectToken("displayname");
-                    //  AethenalealthProvider.DisplayName = (string)pro.SelectToken("displayname");
                 }
             if (pro.SelectToken("entitytype") != null)
             {
                   EntityType = (string)pro.SelectToken("entitytype");
-                    // AethenalealthProvider.EntityType = (string)pro.SelectToken("entitytype");
                 }
             if (pro.SelectToken("firstname") != null)
             {
                    FirstName = (string)pro.SelectToken("firstname");
-                    // AethenalealthProvider.FirstName = (string)pro.SelectToken("firstname");
                 } 
             if (pro.SelectToken("hideinportal") != null)
             {
                    HideInPortal = System.Convert.ToBoolean(pro.SelectToken("hideinportal"));
-                    // AethenalealthProvider.HideInPortal = System.Convert.ToBoolean(pro.SelectToken("hideinportal"));
                 }
             if (pro.SelectToken("lastname") != null)
             {
                   LastName = (string)pro.SelectToken("lastname");
-                    //  AethenalealthProvider.LastName = (string)pro.SelectToken("lastname");
                 }
             if (pro.SelectToken("providerid")!= null)
             {
                  ProviderID = (string)pro.SelectToken("providerid");
-                    //  AethenalealthProvider.ProviderID = (string)pro.SelectToken("providerid");
                 }
             if (pro.SelectToken("providertype") != null)
             {
-                   ProviderType = (string)pro.SelectToken("providertype");
-                    // AethenalealthProvider.ProviderType = (string)pro.SelectToken("providertype");
+                    ProviderType = (string)pro.SelectToken("providertype");
                 }
             if (pro.SelectToken("providertypeid") != null)
             {
                    ProviderTypeId = (string)pro.SelectToken("providertypeid");
-                    // AethenalealthProvider.ProviderTypeId = (string)pro.SelectToken("providertypeid");
                 }
             if (pro.SelectToken("schedulingname") != null)
             {
                    SchedulingName = (string)pro.SelectToken("schedulingname");
-                    // AethenalealthProvider.SchedulingName = (string)pro.SelectToken("schedulingname");
                 }
             if (pro.SelectToken("specialty") != null)
             {
                    Specialty = (string)pro.SelectToken("specialty");
-                    // AethenalealthProvider.Specialty = (string)pro.SelectToken("specialty");
                 }
             if (pro.SelectToken("supervisingproviderid") != null)
             {
                    SupervisingProviderID = (int)pro.SelectToken("supervisingproviderid");
-                    // AethenalealthProvider.SupervisingProviderID = (int)pro.SelectToken("supervisingproviderid");
                 }
             if (pro.SelectToken("supervisingproviderusername") != null)
             {
                   SupervisingProviderUserName = (string)pro.SelectToken("supervisingproviderusername");
-                    //  AethenalealthProvider.SupervisingProviderUserName = (string)pro.SelectToken("supervisingproviderusername");
-
               }
 
                 db.ImportAtheanProvider(AcceptingnewPatients,
