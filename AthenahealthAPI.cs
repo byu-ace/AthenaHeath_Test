@@ -29,7 +29,7 @@ namespace Athenahealth
   ///   <para>
   ///     When an object of this class is constructed, it attempts to authenticate (using basic
   ///     authentication) using the key, secret, and version specified.  It stores the access token
-  ///     for later use.
+  ///     for later other use.
   ///   </para>
   ///   <para>
   ///     Whenever any of the HTTP request methods are called (GET, POST, etc.), the arguments are
