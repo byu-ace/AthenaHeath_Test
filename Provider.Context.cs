@@ -104,5 +104,182 @@ namespace AthenaHeath_Test
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ImportAtheanProvider", acceptingnewPatientsParameter, ansinameCodeParameter, ansispecialtyCodeParameter, billableParameter, createenCounteronCheckinParameter, displayNameParameter, entityTypeParameter, firstNameParameter, hideInPortalParameter, lastNameParameter, providerIDParameter, providerTypeParameter, providerTypeIdParameter, schedulingNameParameter, specialtyParameter, supervisingProviderIDParameter, supervisingProviderUserNameParameter, createdByParameter);
         }
+    
+        public virtual int ImportAtheanPatient(string confidentialitycode, string driverslicenseexpirationdate, string driverslicensenumber, Nullable<short> driverslicensestateid, string homeboundyn, string deceaseddate, string industrycode, string donotcallyn, string ethnicitycode, string language6392code, string race, string firstappointment, string primaryproviderid, string lastappointment, string primarydepartmentid, string status, string hierarchicalcode, string lastemail, string emailexistsyn, string occupationcode, string patientid, string firstname, string middlename, string lastname, string suffix, string preferredname, string address1, string address2, string city, string state, string zip, string countrycode, string countrycode3166, string homephone, string mobilephone, string hasmobileyn, string workphone, string email, string ssn, string racename, string sex, string dob, string createdBy)
+        {
+            var confidentialitycodeParameter = confidentialitycode != null ?
+                new ObjectParameter("confidentialitycode", confidentialitycode) :
+                new ObjectParameter("confidentialitycode", typeof(string));
+    
+            var driverslicenseexpirationdateParameter = driverslicenseexpirationdate != null ?
+                new ObjectParameter("driverslicenseexpirationdate", driverslicenseexpirationdate) :
+                new ObjectParameter("driverslicenseexpirationdate", typeof(string));
+    
+            var driverslicensenumberParameter = driverslicensenumber != null ?
+                new ObjectParameter("driverslicensenumber", driverslicensenumber) :
+                new ObjectParameter("driverslicensenumber", typeof(string));
+    
+            var driverslicensestateidParameter = driverslicensestateid.HasValue ?
+                new ObjectParameter("driverslicensestateid", driverslicensestateid) :
+                new ObjectParameter("driverslicensestateid", typeof(short));
+    
+            var homeboundynParameter = homeboundyn != null ?
+                new ObjectParameter("homeboundyn", homeboundyn) :
+                new ObjectParameter("homeboundyn", typeof(string));
+    
+            var deceaseddateParameter = deceaseddate != null ?
+                new ObjectParameter("deceaseddate", deceaseddate) :
+                new ObjectParameter("deceaseddate", typeof(string));
+    
+            var industrycodeParameter = industrycode != null ?
+                new ObjectParameter("industrycode", industrycode) :
+                new ObjectParameter("industrycode", typeof(string));
+    
+            var donotcallynParameter = donotcallyn != null ?
+                new ObjectParameter("donotcallyn", donotcallyn) :
+                new ObjectParameter("donotcallyn", typeof(string));
+    
+            var ethnicitycodeParameter = ethnicitycode != null ?
+                new ObjectParameter("ethnicitycode", ethnicitycode) :
+                new ObjectParameter("ethnicitycode", typeof(string));
+    
+            var language6392codeParameter = language6392code != null ?
+                new ObjectParameter("language6392code", language6392code) :
+                new ObjectParameter("language6392code", typeof(string));
+    
+            var raceParameter = race != null ?
+                new ObjectParameter("race", race) :
+                new ObjectParameter("race", typeof(string));
+    
+            var firstappointmentParameter = firstappointment != null ?
+                new ObjectParameter("firstappointment", firstappointment) :
+                new ObjectParameter("firstappointment", typeof(string));
+    
+            var primaryprovideridParameter = primaryproviderid != null ?
+                new ObjectParameter("primaryproviderid", primaryproviderid) :
+                new ObjectParameter("primaryproviderid", typeof(string));
+    
+            var lastappointmentParameter = lastappointment != null ?
+                new ObjectParameter("lastappointment", lastappointment) :
+                new ObjectParameter("lastappointment", typeof(string));
+    
+            var primarydepartmentidParameter = primarydepartmentid != null ?
+                new ObjectParameter("primarydepartmentid", primarydepartmentid) :
+                new ObjectParameter("primarydepartmentid", typeof(string));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var hierarchicalcodeParameter = hierarchicalcode != null ?
+                new ObjectParameter("hierarchicalcode", hierarchicalcode) :
+                new ObjectParameter("hierarchicalcode", typeof(string));
+    
+            var lastemailParameter = lastemail != null ?
+                new ObjectParameter("lastemail", lastemail) :
+                new ObjectParameter("lastemail", typeof(string));
+    
+            var emailexistsynParameter = emailexistsyn != null ?
+                new ObjectParameter("emailexistsyn", emailexistsyn) :
+                new ObjectParameter("emailexistsyn", typeof(string));
+    
+            var occupationcodeParameter = occupationcode != null ?
+                new ObjectParameter("occupationcode", occupationcode) :
+                new ObjectParameter("occupationcode", typeof(string));
+    
+            var patientidParameter = patientid != null ?
+                new ObjectParameter("patientid", patientid) :
+                new ObjectParameter("patientid", typeof(string));
+    
+            var firstnameParameter = firstname != null ?
+                new ObjectParameter("firstname", firstname) :
+                new ObjectParameter("firstname", typeof(string));
+    
+            var middlenameParameter = middlename != null ?
+                new ObjectParameter("middlename", middlename) :
+                new ObjectParameter("middlename", typeof(string));
+    
+            var lastnameParameter = lastname != null ?
+                new ObjectParameter("lastname", lastname) :
+                new ObjectParameter("lastname", typeof(string));
+    
+            var suffixParameter = suffix != null ?
+                new ObjectParameter("suffix", suffix) :
+                new ObjectParameter("suffix", typeof(string));
+    
+            var preferrednameParameter = preferredname != null ?
+                new ObjectParameter("preferredname", preferredname) :
+                new ObjectParameter("preferredname", typeof(string));
+    
+            var address1Parameter = address1 != null ?
+                new ObjectParameter("address1", address1) :
+                new ObjectParameter("address1", typeof(string));
+    
+            var address2Parameter = address2 != null ?
+                new ObjectParameter("address2", address2) :
+                new ObjectParameter("address2", typeof(string));
+    
+            var cityParameter = city != null ?
+                new ObjectParameter("city", city) :
+                new ObjectParameter("city", typeof(string));
+    
+            var stateParameter = state != null ?
+                new ObjectParameter("state", state) :
+                new ObjectParameter("state", typeof(string));
+    
+            var zipParameter = zip != null ?
+                new ObjectParameter("zip", zip) :
+                new ObjectParameter("zip", typeof(string));
+    
+            var countrycodeParameter = countrycode != null ?
+                new ObjectParameter("countrycode", countrycode) :
+                new ObjectParameter("countrycode", typeof(string));
+    
+            var countrycode3166Parameter = countrycode3166 != null ?
+                new ObjectParameter("countrycode3166", countrycode3166) :
+                new ObjectParameter("countrycode3166", typeof(string));
+    
+            var homephoneParameter = homephone != null ?
+                new ObjectParameter("homephone", homephone) :
+                new ObjectParameter("homephone", typeof(string));
+    
+            var mobilephoneParameter = mobilephone != null ?
+                new ObjectParameter("mobilephone", mobilephone) :
+                new ObjectParameter("mobilephone", typeof(string));
+    
+            var hasmobileynParameter = hasmobileyn != null ?
+                new ObjectParameter("hasmobileyn", hasmobileyn) :
+                new ObjectParameter("hasmobileyn", typeof(string));
+    
+            var workphoneParameter = workphone != null ?
+                new ObjectParameter("workphone", workphone) :
+                new ObjectParameter("workphone", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var ssnParameter = ssn != null ?
+                new ObjectParameter("ssn", ssn) :
+                new ObjectParameter("ssn", typeof(string));
+    
+            var racenameParameter = racename != null ?
+                new ObjectParameter("racename", racename) :
+                new ObjectParameter("racename", typeof(string));
+    
+            var sexParameter = sex != null ?
+                new ObjectParameter("sex", sex) :
+                new ObjectParameter("sex", typeof(string));
+    
+            var dobParameter = dob != null ?
+                new ObjectParameter("dob", dob) :
+                new ObjectParameter("dob", typeof(string));
+    
+            var createdByParameter = createdBy != null ?
+                new ObjectParameter("CreatedBy", createdBy) :
+                new ObjectParameter("CreatedBy", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ImportAtheanPatient", confidentialitycodeParameter, driverslicenseexpirationdateParameter, driverslicensenumberParameter, driverslicensestateidParameter, homeboundynParameter, deceaseddateParameter, industrycodeParameter, donotcallynParameter, ethnicitycodeParameter, language6392codeParameter, raceParameter, firstappointmentParameter, primaryprovideridParameter, lastappointmentParameter, primarydepartmentidParameter, statusParameter, hierarchicalcodeParameter, lastemailParameter, emailexistsynParameter, occupationcodeParameter, patientidParameter, firstnameParameter, middlenameParameter, lastnameParameter, suffixParameter, preferrednameParameter, address1Parameter, address2Parameter, cityParameter, stateParameter, zipParameter, countrycodeParameter, countrycode3166Parameter, homephoneParameter, mobilephoneParameter, hasmobileynParameter, workphoneParameter, emailParameter, ssnParameter, racenameParameter, sexParameter, dobParameter, createdByParameter);
+        }
     }
 }

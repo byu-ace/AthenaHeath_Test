@@ -5,6 +5,51 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="AetheanProviderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="ImportAtheanPatient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="adi">
+          <Parameter Name="confidentialitycode" Type="varchar" Mode="In" />
+          <Parameter Name="driverslicenseexpirationdate" Type="varchar" Mode="In" />
+          <Parameter Name="driverslicensenumber" Type="varchar" Mode="In" />
+          <Parameter Name="driverslicensestateid" Type="smallint" Mode="In" />
+          <Parameter Name="homeboundyn" Type="char" Mode="In" />
+          <Parameter Name="deceaseddate" Type="varchar" Mode="In" />
+          <Parameter Name="industrycode" Type="varchar" Mode="In" />
+          <Parameter Name="donotcallyn" Type="char" Mode="In" />
+          <Parameter Name="ethnicitycode" Type="varchar" Mode="In" />
+          <Parameter Name="language6392code" Type="varchar" Mode="In" />
+          <Parameter Name="race" Type="varchar" Mode="In" />
+          <Parameter Name="firstappointment" Type="varchar" Mode="In" />
+          <Parameter Name="primaryproviderid" Type="char" Mode="In" />
+          <Parameter Name="lastappointment" Type="varchar" Mode="In" />
+          <Parameter Name="primarydepartmentid" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+          <Parameter Name="hierarchicalcode" Type="varchar" Mode="In" />
+          <Parameter Name="lastemail" Type="varchar" Mode="In" />
+          <Parameter Name="emailexistsyn" Type="varchar" Mode="In" />
+          <Parameter Name="occupationcode" Type="varchar" Mode="In" />
+          <Parameter Name="patientid" Type="varchar" Mode="In" />
+          <Parameter Name="firstname" Type="varchar" Mode="In" />
+          <Parameter Name="middlename" Type="varchar" Mode="In" />
+          <Parameter Name="lastname" Type="varchar" Mode="In" />
+          <Parameter Name="suffix" Type="varchar" Mode="In" />
+          <Parameter Name="preferredname" Type="varchar" Mode="In" />
+          <Parameter Name="address1" Type="varchar" Mode="In" />
+          <Parameter Name="address2" Type="varchar" Mode="In" />
+          <Parameter Name="city" Type="varchar" Mode="In" />
+          <Parameter Name="state" Type="varchar" Mode="In" />
+          <Parameter Name="zip" Type="varchar" Mode="In" />
+          <Parameter Name="countrycode" Type="varchar" Mode="In" />
+          <Parameter Name="countrycode3166" Type="varchar" Mode="In" />
+          <Parameter Name="homephone" Type="varchar" Mode="In" />
+          <Parameter Name="mobilephone" Type="varchar" Mode="In" />
+          <Parameter Name="hasmobileyn" Type="varchar" Mode="In" />
+          <Parameter Name="workphone" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="ssn" Type="varchar" Mode="In" />
+          <Parameter Name="racename" Type="varchar" Mode="In" />
+          <Parameter Name="sex" Type="char" Mode="In" />
+          <Parameter Name="dob" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="ImportAtheanProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="adi">
           <Parameter Name="AcceptingnewPatients" Type="bit" Mode="In" />
           <Parameter Name="AnsinameCode" Type="varchar" Mode="In" />
@@ -51,6 +96,51 @@
             <Parameter Name="SupervisingProviderUserName" Mode="In" Type="String" />
             <Parameter Name="CreatedBy" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="ImportAtheanPatient">
+            <Parameter Name="confidentialitycode" Mode="In" Type="String" />
+            <Parameter Name="driverslicenseexpirationdate" Mode="In" Type="String" />
+            <Parameter Name="driverslicensenumber" Mode="In" Type="String" />
+            <Parameter Name="driverslicensestateid" Mode="In" Type="Int16" />
+            <Parameter Name="homeboundyn" Mode="In" Type="String" />
+            <Parameter Name="deceaseddate" Mode="In" Type="String" />
+            <Parameter Name="industrycode" Mode="In" Type="String" />
+            <Parameter Name="donotcallyn" Mode="In" Type="String" />
+            <Parameter Name="ethnicitycode" Mode="In" Type="String" />
+            <Parameter Name="language6392code" Mode="In" Type="String" />
+            <Parameter Name="race" Mode="In" Type="String" />
+            <Parameter Name="firstappointment" Mode="In" Type="String" />
+            <Parameter Name="primaryproviderid" Mode="In" Type="String" />
+            <Parameter Name="lastappointment" Mode="In" Type="String" />
+            <Parameter Name="primarydepartmentid" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="hierarchicalcode" Mode="In" Type="String" />
+            <Parameter Name="lastemail" Mode="In" Type="String" />
+            <Parameter Name="emailexistsyn" Mode="In" Type="String" />
+            <Parameter Name="occupationcode" Mode="In" Type="String" />
+            <Parameter Name="patientid" Mode="In" Type="String" />
+            <Parameter Name="firstname" Mode="In" Type="String" />
+            <Parameter Name="middlename" Mode="In" Type="String" />
+            <Parameter Name="lastname" Mode="In" Type="String" />
+            <Parameter Name="suffix" Mode="In" Type="String" />
+            <Parameter Name="preferredname" Mode="In" Type="String" />
+            <Parameter Name="address1" Mode="In" Type="String" />
+            <Parameter Name="address2" Mode="In" Type="String" />
+            <Parameter Name="city" Mode="In" Type="String" />
+            <Parameter Name="state" Mode="In" Type="String" />
+            <Parameter Name="zip" Mode="In" Type="String" />
+            <Parameter Name="countrycode" Mode="In" Type="String" />
+            <Parameter Name="countrycode3166" Mode="In" Type="String" />
+            <Parameter Name="homephone" Mode="In" Type="String" />
+            <Parameter Name="mobilephone" Mode="In" Type="String" />
+            <Parameter Name="hasmobileyn" Mode="In" Type="String" />
+            <Parameter Name="workphone" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="ssn" Mode="In" Type="String" />
+            <Parameter Name="racename" Mode="In" Type="String" />
+            <Parameter Name="sex" Mode="In" Type="String" />
+            <Parameter Name="dob" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -59,6 +149,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AetheanProviderModelStoreContainer" CdmEntityContainer="AetheaProviderEntities" >
           <FunctionImportMapping FunctionImportName="ImportAtheanProvider" FunctionName="AetheanProviderModel.Store.ImportAtheanProvider" />
+          <FunctionImportMapping FunctionImportName="ImportAtheanPatient" FunctionName="AetheanProviderModel.Store.ImportAtheanPatient" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

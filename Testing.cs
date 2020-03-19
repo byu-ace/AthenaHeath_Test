@@ -145,7 +145,7 @@ public class Testing
         //  File.WriteAllText(path, jsonString);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        // Get  Get providers
+        // Get  providers
         ////////////////////////////////////////////////////////////////////////////////////////////////
 
         JsonValue providers = api.GET("/providers");
@@ -280,175 +280,342 @@ public class Testing
         File.WriteAllText(path, jsonString);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
+        // Get  Patients 
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+
+        for (int i = 1; i <51; i++)
+        {
+
+            JsonValue patient = api.GET("/patients/" + i);
+            var jsonString1 = patient.ToString();
+            jsonString1 = jsonString1.TrimStart(new char[] { '[' }).TrimEnd(new char[] { ']' });
+            path = "../../patient_" + i + ".json";
+            File.WriteAllText(path, jsonString1);
+            var jsonString2 = JObject.Parse(jsonString1);
+
+            string confidentialitycode = string.Empty;
+            string driverslicenseexpirationdate = string.Empty;
+            string driverslicensenumber = string.Empty;
+            short driverslicensestateid = 0;
+            string homeboundyn = string.Empty;
+            string deceaseddate = string.Empty;
+            string industrycode = string.Empty;
+            string donotcallyn = string.Empty;
+            string ethnicitycode = string.Empty;
+            string language6392code = string.Empty;
+            string race = string.Empty;
+            string firstappointment = string.Empty;
+            string primaryprovider = string.Empty;
+            string lastappointment = string.Empty;
+            string primarydepartmentid = string.Empty;
+            string status = string.Empty;
+            string hierarchicalcode = string.Empty;
+            string lastemail = string.Empty;
+            string emailexistsyn = string.Empty;
+            string occupationcode = string.Empty;
+            string patientid = string.Empty;
+            string firstname =string.Empty;
+            string middlename = string.Empty;
+            string lastname = string.Empty;
+            string suffix = string.Empty;
+            string preferredname = string.Empty;
+            string address1 = string.Empty;
+            string address2 = string.Empty;
+            string city = string.Empty;
+            string state = string.Empty;
+            string zip = string.Empty;
+            string countrycode = string.Empty;
+            string countrycode3166 = string.Empty;
+            string homephone = string.Empty;
+            string mobilephone = string.Empty;
+            string hasmobileyn = string.Empty;
+            string workphone = string.Empty;
+            string email = string.Empty;
+            string ssn = string.Empty;
+            string racename = string.Empty;
+            string sex = string.Empty;
+            string dob = string.Empty;
+
+
+            using (AetheaProviderEntities db = new AetheaProviderEntities())
+            {
+                if (jsonString2.SelectToken("confidentialitycode") != null)
+                    confidentialitycode = jsonString2.SelectToken("confidentialitycode").ToString();
+                if (jsonString2.SelectToken("driverslicenseexpirationdate") != null)
+                    driverslicenseexpirationdate = jsonString2.SelectToken("driverslicenseexpirationdate").ToString();
+                if (jsonString2.SelectToken("driverslicensenumber") != null)
+                    driverslicensenumber = jsonString2.SelectToken("driverslicensenumber").ToString();
+                if (jsonString2.SelectToken("driverslicensestateid") != null)
+                    driverslicensestateid = Convert.ToInt16(jsonString2.SelectToken("driverslicensestateid"));
+                if (jsonString2.SelectToken("mhoeboundyn") != null)
+                    homeboundyn = jsonString2.SelectToken("mhoeboundyn").ToString();
+                if (jsonString2.SelectToken("deceaseddate") != null)
+                    deceaseddate = jsonString2.SelectToken("deceaseddate").ToString();
+                if (jsonString2.SelectToken("industrycode") != null)
+                    industrycode = jsonString2.SelectToken("industrycode").ToString();
+                if (jsonString2.SelectToken("donotcallyn") != null)
+                    donotcallyn = jsonString2.SelectToken("donotcallyn").ToString();
+                if (jsonString2.SelectToken("ethnicitycode") != null)
+                    ethnicitycode = jsonString2.SelectToken("ethnicitycode").ToString();
+                if (jsonString2.SelectToken("language6392code") != null)
+                    language6392code = jsonString2.SelectToken("language6392code").ToString();
+                if (jsonString2.SelectToken("race") != null)
+                    race = jsonString2.SelectToken("race").ToString();
+                if (jsonString2.SelectToken("firstappointment") != null)
+                    firstappointment = jsonString2.SelectToken("firstappointment").ToString();
+                if (jsonString2.SelectToken("primaryprovider") != null)
+                    primaryprovider = jsonString2.SelectToken("primaryprovider").ToString();
+                if (jsonString2.SelectToken("lastappointment") != null)
+                    lastappointment = jsonString2.SelectToken("lastappointment").ToString();
+                if (jsonString2.SelectToken("primarydepartmentid") != null)
+                    primarydepartmentid = jsonString2.SelectToken("primarydepartmentid").ToString();
+                if (jsonString2.SelectToken("status") != null)
+                    status = jsonString2.SelectToken("status").ToString();
+                if (jsonString2.SelectToken("hierarchicalcode") != null)
+                    hierarchicalcode = jsonString2.SelectToken("hierarchicalcode").ToString();
+                if (jsonString2.SelectToken("lastemail") != null)
+                    lastemail = jsonString2.SelectToken("lastemail").ToString();
+                if (jsonString2.SelectToken("emailexistsyn") != null)
+                    emailexistsyn = jsonString2.SelectToken("emailexistsyn").ToString();
+                if (jsonString2.SelectToken("occupationcode") != null)
+                    occupationcode = jsonString2.SelectToken("occupationcode").ToString();
+                if (jsonString2.SelectToken("patientid") != null)
+                    patientid = jsonString2.SelectToken("patientid").ToString();
+                if (jsonString2.SelectToken("firstname") != null)
+                    firstname = jsonString2.SelectToken("firstname").ToString();
+                if (jsonString2.SelectToken("middlename") != null)
+                    middlename = jsonString2.SelectToken("middlename").ToString();
+                if (jsonString2.SelectToken("lastname") != null)
+                    lastname = jsonString2.SelectToken("lastname").ToString();
+                if (jsonString2.SelectToken("suffix") != null)
+                    suffix = jsonString2.SelectToken("suffix").ToString();
+                if (jsonString2.SelectToken("preferredname") != null)
+                    preferredname = jsonString2.SelectToken("preferredname").ToString();
+                if (jsonString2.SelectToken("address1") != null)
+                    address1 = jsonString2.SelectToken("address1").ToString();
+                if (jsonString2.SelectToken("address2") != null)
+                    address2 = jsonString2.SelectToken("address2").ToString();
+                if (jsonString2.SelectToken("city") != null)
+                    city = jsonString2.SelectToken("city").ToString();
+                if (jsonString2.SelectToken("state") != null)
+                    state = jsonString2.SelectToken("state").ToString();
+                if (jsonString2.SelectToken("zip") != null)
+                    zip = jsonString2.SelectToken("zip").ToString();
+                if (jsonString2.SelectToken("countrycode") != null)
+                    countrycode = jsonString2.SelectToken("countrycode").ToString();
+                if (jsonString2.SelectToken("countrycode3166") != null)
+                    countrycode3166 = jsonString2.SelectToken("countrycode3166").ToString();
+                if (jsonString2.SelectToken("homephone") != null)
+                    homephone = jsonString2.SelectToken("homephone").ToString();
+                if (jsonString2.SelectToken("mobilephone") != null)
+                    mobilephone = jsonString2.SelectToken("mobilephone").ToString();
+                if (jsonString2.SelectToken("hasmobileyn") != null)
+                    hasmobileyn = jsonString2.SelectToken("hasmobileyn").ToString();
+                if (jsonString2.SelectToken("workphone") != null)
+                    workphone = jsonString2.SelectToken("workphone").ToString();
+                if (jsonString2.SelectToken("email") != null)
+                    email = jsonString2.SelectToken("email").ToString();
+                if (jsonString2.SelectToken("ssn") != null)
+                    ssn = jsonString2.SelectToken("ssn").ToString();
+                if (jsonString2.SelectToken("racename") != null)
+                    racename = jsonString2.SelectToken("racename").ToString();
+                if (jsonString2.SelectToken("sex") != null)
+                    sex = jsonString2.SelectToken("sex").ToString();
+                if (jsonString2.SelectToken("dob") != null)
+                    dob = jsonString2.SelectToken("dob").ToString();
+
+
+                CreatedBy = string.Empty;
+                db.ImportAtheanPatient(
+                    confidentialitycode, driverslicenseexpirationdate, driverslicensenumber, driverslicensestateid, homeboundyn,
+                    deceaseddate, industrycode, donotcallyn, ethnicitycode, language6392code, race, firstappointment, primarydepartmentid,
+                    lastappointment, primarydepartmentid, status, hierarchicalcode, lastemail, emailexistsyn, occupationcode, patientid,
+                    firstname, middlename, lastname, suffix, preferredname, address1, address2, city, state, zip, countrycode, countrycode3166,
+                    homephone, mobilephone, hasmobileyn, workphone, email, ssn, racename, sex, dob, "BoomiDbUser");
+                db.SaveChanges();
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
         // Get  Get providers
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        Dictionary<string, string> searchcommunicatorbrand = new Dictionary<string, string>()
-        {
-              { "communicatorbrandid", "2"}
-           
-          };
+        //     Dictionary<string, string> searchcommunicatorbrand = new Dictionary<string, string>()
+        //{
+        //      { "communicatorbrandid", "2"}
+
+        //  };
 
 
-        JsonValue communicatorbrands = api.GET("/communicatorbrands", searchcommunicatorbrand);
-        jsonString = communicatorbrands.ToString();
-        path = "../../communicatorbrands.json";
-        File.WriteAllText(path, jsonString);
+        //JsonValue communicatorbrands = api.GET("/communicatorbrands", searchcommunicatorbrand);
+        //jsonString = communicatorbrands.ToString();
+        //path = "../../communicatorbrands.json";
+        //File.WriteAllText(path, jsonString);
 
-       
+
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         // Get  communicatorbrands 
         ////////////////////////////////////////////////////////////////////////////////////////////////
 
-      
+
 
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         // GET with parameters
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        string format = "MM/dd/yyyy";
-        DateTime today = DateTime.Now;
-        DateTime nextyear = today.AddYears(1);
+        //string format = "MM/dd/yyyy";
+        //DateTime today = DateTime.Now;
+        //DateTime nextyear = today.AddYears(1);
 
-        Dictionary<string, string> search = new Dictionary<string, string>()
-          {
-            {"departmentid", "1"},
-            {"startdate", today.ToString(format)},
-            {"enddate", nextyear.ToString(format)},
-            {"appointmenttypeid", "2"},
-            {"limit", "1"},
-            { "ignoreschedulablepermission", "true"}
-          };
+        //Dictionary<string, string> search = new Dictionary<string, string>()
+        //  {
+        //    {"departmentid", "1"},
+        //    {"startdate", today.ToString(format)},
+        //    {"enddate", nextyear.ToString(format)},
+        //    {"appointmenttypeid", "2"},
+        //    {"limit", "1"},
+        //    { "ignoreschedulablepermission", "true"}
+        //  };
 
-        JsonValue open_appts = api.GET("/appointments/open", search);
-        //JsonValue open_appts = api.GET("/appointments/open");
-        Console.WriteLine(open_appts.ToString());
-        JsonValue appt = open_appts["appointments"][0];
-        Console.WriteLine("Open appointment:");
-        Console.WriteLine(appt.ToString());
+        //JsonValue open_appts = api.GET("/appointments/open", search);
+        ////JsonValue open_appts = api.GET("/appointments/open");
+        //Console.WriteLine(open_appts.ToString());
+        //JsonValue appt = open_appts["appointments"][0];
+        //Console.WriteLine("Open appointment:");
+        //Console.WriteLine(appt.ToString());
 
-        Dictionary<string, string> newAppt = new Dictionary<string, string>();
-        foreach (KeyValuePair<string, JsonValue> kvp in appt)
-        {
-            newAppt[kvp.Key] = kvp.Value.ToString();
-        }
+        //Dictionary<string, string> newAppt = new Dictionary<string, string>();
+        //foreach (KeyValuePair<string, JsonValue> kvp in appt)
+        //{
+        //    newAppt[kvp.Key] = kvp.Value.ToString();
+        //}
 
 
-        // add keys to make appt usable for scheduling
-        appt["appointmenttime"] = appt["starttime"];
-        appt["appointmentdate"] = appt["date"];
+        //// add keys to make appt usable for scheduling
+        //appt["appointmenttime"] = appt["starttime"];
+        //appt["appointmentdate"] = appt["date"];
 
 
         // Thread.Sleep(1000); 		// NOTE: Uncomment this line if you keep getting "Over QPS" errors
         ////////////////////////////////////////////////////////////////////////////////////////////////
         // POST with parameters
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        Dictionary<string, string> patientInfo = new Dictionary<string, string>()
-	  {
-		{"departmentid", "1"},
-		{"lastname", "YOU"},
-		{"firstname", "BING"},
-		{"address1", "123 Any Street"},
-		{"city", "Cambridge"},
-		{"countrycode3166", "US"},
-		{"dob", "6/18/1987"},
-		{"language6392code", "declined"},
-		{"maritalstatus", "S"},
-		{"race", "declined"},
-		{"sex", "M"},
-		{"ssn", "123456789"},
-		{"zip", "02139"},
-	  };
+        //       Dictionary<string, string> patientInfo = new Dictionary<string, string>()
+        //  {
+        //	{"departmentid", "1"},
+        //	{"lastname", "YOU"},
+        //	{"firstname", "BING"},
+        //	{"address1", "123 Any Street"},
+        //	{"city", "Cambridge"},
+        //	{"countrycode3166", "US"},
+        //	{"dob", "6/18/1987"},
+        //	{"language6392code", "declined"},
+        //	{"maritalstatus", "S"},
+        //	{"race", "declined"},
+        //	{"sex", "M"},
+        //	{"ssn", "123456789"},
+        //	{"zip", "02139"},
+        //  };
 
-	JsonValue newPatient = api.POST("/patients", patientInfo);
-	Console.WriteLine(newPatient.ToString());
-	string newPatientID = newPatient[0]["patientid"];
-	Console.WriteLine("New patient id:");
-	Console.WriteLine(newPatientID);
-		
+        //JsonValue newPatient = api.POST("/patients", patientInfo);
+        //Console.WriteLine(newPatient.ToString());
+        //string newPatientID = newPatient[0]["patientid"];
+        //Console.WriteLine("New patient id:");
+        //Console.WriteLine(newPatientID);
 
-	//////////////////////////////////////////////////////////////////////////////////////////////////
-	//// PUT with parameters
-	//////////////////////////////////////////////////////////////////////////////////////////////////
-	Dictionary<string, string> appointmentInfo = new Dictionary<string, string>()
-	    {
-		   {"appointmenttypeid", "82"},
-		   {"departmentid", "1"},
-		   {"patientid", newPatientID},
-	    };
 
-        JsonValue booked = api.PUT("/appointments/" + appt["appointmentid"], appointmentInfo);
-        Console.WriteLine("Booked:");
-        Console.WriteLine(booked.ToString());
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        //// PUT with parameters
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        //Dictionary<string, string> appointmentInfo = new Dictionary<string, string>()
+        //    {
+        //	   {"appointmenttypeid", "82"},
+        //	   {"departmentid", "1"},
+        //	   {"patientid", newPatientID},
+        //    };
+
+        //       JsonValue booked = api.PUT("/appointments/" + appt["appointmentid"], appointmentInfo);
+        //       Console.WriteLine("Booked:");
+        //       Console.WriteLine(booked.ToString());
+
+
+        //       //// Thread.Sleep(1000); 		// NOTE: Uncomment this line if you keep getting "Over QPS" errors
+        //       //////////////////////////////////////////////////////////////////////////////////////////////////
+        //       //// POST without parameters
+        //       ////////////////////////////////////////////////////////////////////////////////////////////////
+        //       JsonValue checked_in = api.POST(string.Format("/appointments/{0}/checkin", appt["appointmentid"]));
+        //       Console.WriteLine("Check-in:");
+        //       Console.WriteLine(checked_in.ToString());
+
+
+        //       ////////////////////////////////////////////////////////////////////////////////////////////////
+        //       // DELETE with parameters
+        //       ////////////////////////////////////////////////////////////////////////////////////////////////
+        //       Dictionary<string, string> deleteParams = new Dictionary<string, string>()
+        //  {
+        //	{"departmentid", "1"},
+        //  };
+        //JsonValue chartAlert = api.DELETE(string.Format("/patients/{0}/chartalert", newPatientID), deleteParams);
+        //Console.WriteLine("Removed chart alert:");
+        //Console.WriteLine(chartAlert.ToString());
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        //// DELETE without parameters
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        //JsonValue photo = api.DELETE(string.Format("/patients/{0}/photo", newPatientID));
+        //Console.WriteLine("Removed photo:");
+        //Console.WriteLine(photo.ToString());
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        //// There are no PUTs without parameters
+        //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         //// Thread.Sleep(1000); 		// NOTE: Uncomment this line if you keep getting "Over QPS" errors
         //////////////////////////////////////////////////////////////////////////////////////////////////
-        //// POST without parameters
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        JsonValue checked_in = api.POST(string.Format("/appointments/{0}/checkin", appt["appointmentid"]));
-        Console.WriteLine("Check-in:");
-        Console.WriteLine(checked_in.ToString());
+        //// Error conditions
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        //JsonValue badPath = api.GET("/nothing/at/this/path");
+        //Console.WriteLine("GET /nothing/at/this/path:");
+        //Console.WriteLine(badPath.ToString());
+        //JsonValue missingParameters = api.GET("/appointments/open");
+        //Console.WriteLine("Missing parameters:");
+        //Console.WriteLine(missingParameters.ToString());
 
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        // DELETE with parameters
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        Dictionary<string, string> deleteParams = new Dictionary<string, string>()
-	  {
-		{"departmentid", "1"},
-	  };
-	JsonValue chartAlert = api.DELETE(string.Format("/patients/{0}/chartalert", newPatientID), deleteParams);
-	Console.WriteLine("Removed chart alert:");
-	Console.WriteLine(chartAlert.ToString());
-		
-		
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	// DELETE without parameters
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	JsonValue photo = api.DELETE(string.Format("/patients/{0}/photo", newPatientID));
-	Console.WriteLine("Removed photo:");
-	Console.WriteLine(photo.ToString());
-		
-		
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	// There are no PUTs without parameters
-	////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		
-	// Thread.Sleep(1000); 		// NOTE: Uncomment this line if you keep getting "Over QPS" errors
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	// Error conditions
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	JsonValue badPath = api.GET("/nothing/at/this/path");
-	Console.WriteLine("GET /nothing/at/this/path:");
-	Console.WriteLine(badPath.ToString());
-	JsonValue missingParameters = api.GET("/appointments/open");
-	Console.WriteLine("Missing parameters:");
-	Console.WriteLine(missingParameters.ToString());
+        //       ////////////////////////////////////////////////////////////////////////////////////////////////
+        //       // Testing token refresh
+        //       //
+        //       // NOTE: this test takes an hour, so it's disabled by default. Change false to true to run.
+        //       ////////////////////////////////////////////////////////////////////////////////////////////////
+        //       ///	if (false) {
+        //       if (true) { 
+        //       string oldToken = api.GetToken();
+        //  Console.WriteLine("Old token: " + oldToken);
 
+        //  api.GET("/departments");
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        // Testing token refresh
-        //
-        // NOTE: this test takes an hour, so it's disabled by default. Change false to true to run.
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        ///	if (false) {
-        if (true) { 
-        string oldToken = api.GetToken();
-	  Console.WriteLine("Old token: " + oldToken);
-			
-	  api.GET("/departments");
-			
-	  // Wait 3600 seconds = 1 hour for token to expire.
-	  Thread.Sleep(3600 * 1000);
-			
-	  api.GET("/departments");
-			
-	  Console.WriteLine("New token: " + api.GetToken());
-	}
-  }
+        //  // Wait 3600 seconds = 1 hour for token to expire.
+        //  Thread.Sleep(3600 * 1000);
+
+        //  api.GET("/departments");
+
+        //  Console.WriteLine("New token: " + api.GetToken());
+        //	}
+    }
 }
+
 

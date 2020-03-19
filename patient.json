@@ -1,0 +1,1 @@
+{"error": "Data for one or more of the fields listed above are required to successfully find a patient record. Note: invalid phone numbers are ignored.", "fields": ["guarantorfirstname", "dob", "firstname", "workphone", "departmentid", "guarantorsuffix", "guarantorlastname", "mobilephone", "middlename", "suffix", "guarantormiddlename", "lastname", "homephone", "anyphone"]}
