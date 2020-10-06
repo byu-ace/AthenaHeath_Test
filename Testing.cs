@@ -279,6 +279,10 @@ public class Testing
         path = "../../providers.json";
         File.WriteAllText(path, jsonString);
 
+        //////////
+        // Get 
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////
         // Get  Patients 
         ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -289,8 +293,8 @@ public class Testing
             JsonValue patient = api.GET("/patients/" + i);
             var jsonString1 = patient.ToString();
             jsonString1 = jsonString1.TrimStart(new char[] { '[' }).TrimEnd(new char[] { ']' });
-            path = "../../patient_" + i + ".json";
-            File.WriteAllText(path, jsonString1);
+          //  path = "../../patient_" + i + ".json";
+          //  File.WriteAllText(path, jsonString1);
             var jsonString2 = JObject.Parse(jsonString1);
 
             string confidentialitycode = string.Empty;
