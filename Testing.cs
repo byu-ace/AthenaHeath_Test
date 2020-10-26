@@ -27,12 +27,13 @@ public class Testing
     static public void Main()
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        // Setup
+        // Setup new addded Practice ID = 8684 with old one 
+        //  string practiceid = "195900";
         ////////////////////////////////////////////////////////////////////////////////////////////////
         string key = "vy2e2stx2ym4dvyagck7j36m";
         string secret = "5AfgfU6Q3cZGYRK";
         string version = "preview1";
-        string practiceid = "195900";
+        string practiceid = "8684";
         string jsonString = string.Empty;
         string path = null;
 
@@ -68,7 +69,7 @@ public class Testing
 
         Dictionary<string, string> search1 = new Dictionary<string, string>()
         {
-            { "practiceid", "1"},
+            { "practiceid", "8684"},
             { "limit", "20"},
             { "offset", "0"},
         };
@@ -153,125 +154,125 @@ public class Testing
         dynamic data = JObject.Parse(jsonString);
         string totalprovideraccount = data.totalcount;
         JArray AethProvider = (JArray)data.SelectToken("providers");
-        Boolean AcceptingnewPatients = false;
-        string AnsinameCode = string.Empty;
-        string AnsispecialtyCode = string.Empty;
-        Boolean Billable = false;
-        Boolean CreateenCounteronCheckin = false;
-        string DisplayName = string.Empty;
-        string FirstName = string.Empty;
-        string LastName = string.Empty;
-        string EntityType = string.Empty;
-        string SupervisingProviderUserName = string.Empty;
-        Boolean HideInPortal = false;
-        string ProviderID = string.Empty;
-        string ProviderType = string.Empty;
-        string ProviderTypeId = string.Empty;
-        string SchedulingName = string.Empty;
-        string Specialty = string.Empty;
-        int SupervisingProviderID = 0;
-        string CreatedBy = "BoomiDbUser";
+        //Boolean AcceptingnewPatients = false;
+        //string AnsinameCode = string.Empty;
+        //string AnsispecialtyCode = string.Empty;
+        //Boolean Billable = false;
+        //Boolean CreateenCounteronCheckin = false;
+        //string DisplayName = string.Empty;
+        //string FirstName = string.Empty;
+        //string LastName = string.Empty;
+        //string EntityType = string.Empty;
+        //string SupervisingProviderUserName = string.Empty;
+        //Boolean HideInPortal = false;
+        //string ProviderID = string.Empty;
+        //string ProviderType = string.Empty;
+        //string ProviderTypeId = string.Empty;
+        //string SchedulingName = string.Empty;
+        //string Specialty = string.Empty;
+        //int SupervisingProviderID = 0;
+        //string CreatedBy = "BoomiDbUser";
 
-        using (AetheaProviderEntities db = new AetheaProviderEntities())
-        {
+        //using (AetheaProviderEntities db = new AetheaProviderEntities())
+        //{
 
-         foreach (JToken pro in AethProvider)
-         {
+        // foreach (JToken pro in AethProvider)
+        // {
 
-            //(string)dep.SelectToken("name");
+        //    //(string)dep.SelectToken("name");
 
-            if (pro.SelectToken("acceptingnewpatients") != null)
-            {
-                   AcceptingnewPatients = System.Convert.ToBoolean(pro.SelectToken("acceptingnewpatients"));
-            }
-            if (pro.SelectToken("ansinamecode") != null)
-            {
-                    AnsinameCode = (string)pro.SelectToken("ansinamecode"); 
-            }
-            if (pro.SelectToken("ansispecialtycode") != null)
-            {
-                  AnsispecialtyCode = (string)pro.SelectToken("ansispecialtycode");
-                }
-            if (pro.SelectToken("billable") != null)
-            {
-                    Billable = System.Convert.ToBoolean(pro.SelectToken("billable"));
-                }
-            if (pro.SelectToken("createencounteroncheckin") != null)
-            {
-                    CreateenCounteronCheckin = System.Convert.ToBoolean(pro.SelectToken("createencounteroncheckin"));
-                }
-            if (pro.SelectToken("displayname") != null)
-            {
-                  DisplayName = (string)pro.SelectToken("displayname");
-                }
-            if (pro.SelectToken("entitytype") != null)
-            {
-                  EntityType = (string)pro.SelectToken("entitytype");
-                }
-            if (pro.SelectToken("firstname") != null)
-            {
-                   FirstName = (string)pro.SelectToken("firstname");
-                } 
-            if (pro.SelectToken("hideinportal") != null)
-            {
-                   HideInPortal = System.Convert.ToBoolean(pro.SelectToken("hideinportal"));
-                }
-            if (pro.SelectToken("lastname") != null)
-            {
-                  LastName = (string)pro.SelectToken("lastname");
-                }
-            if (pro.SelectToken("providerid")!= null)
-            {
-                 ProviderID = (string)pro.SelectToken("providerid");
-                }
-            if (pro.SelectToken("providertype") != null)
-            {
-                    ProviderType = (string)pro.SelectToken("providertype");
-                }
-            if (pro.SelectToken("providertypeid") != null)
-            {
-                   ProviderTypeId = (string)pro.SelectToken("providertypeid");
-                }
-            if (pro.SelectToken("schedulingname") != null)
-            {
-                   SchedulingName = (string)pro.SelectToken("schedulingname");
-                }
-            if (pro.SelectToken("specialty") != null)
-            {
-                   Specialty = (string)pro.SelectToken("specialty");
-                }
-            if (pro.SelectToken("supervisingproviderid") != null)
-            {
-                   SupervisingProviderID = (int)pro.SelectToken("supervisingproviderid");
-                }
-            if (pro.SelectToken("supervisingproviderusername") != null)
-            {
-                  SupervisingProviderUserName = (string)pro.SelectToken("supervisingproviderusername");
-              }
+        //    if (pro.SelectToken("acceptingnewpatients") != null)
+        //    {
+        //           AcceptingnewPatients = System.Convert.ToBoolean(pro.SelectToken("acceptingnewpatients"));
+        //    }
+        //    if (pro.SelectToken("ansinamecode") != null)
+        //    {
+        //            AnsinameCode = (string)pro.SelectToken("ansinamecode"); 
+        //    }
+        //    if (pro.SelectToken("ansispecialtycode") != null)
+        //    {
+        //          AnsispecialtyCode = (string)pro.SelectToken("ansispecialtycode");
+        //        }
+        //    if (pro.SelectToken("billable") != null)
+        //    {
+        //            Billable = System.Convert.ToBoolean(pro.SelectToken("billable"));
+        //        }
+        //    if (pro.SelectToken("createencounteroncheckin") != null)
+        //    {
+        //            CreateenCounteronCheckin = System.Convert.ToBoolean(pro.SelectToken("createencounteroncheckin"));
+        //        }
+        //    if (pro.SelectToken("displayname") != null)
+        //    {
+        //          DisplayName = (string)pro.SelectToken("displayname");
+        //        }
+        //    if (pro.SelectToken("entitytype") != null)
+        //    {
+        //          EntityType = (string)pro.SelectToken("entitytype");
+        //        }
+        //    if (pro.SelectToken("firstname") != null)
+        //    {
+        //           FirstName = (string)pro.SelectToken("firstname");
+        //        } 
+        //    if (pro.SelectToken("hideinportal") != null)
+        //    {
+        //           HideInPortal = System.Convert.ToBoolean(pro.SelectToken("hideinportal"));
+        //        }
+        //    if (pro.SelectToken("lastname") != null)
+        //    {
+        //          LastName = (string)pro.SelectToken("lastname");
+        //        }
+        //    if (pro.SelectToken("providerid")!= null)
+        //    {
+        //         ProviderID = (string)pro.SelectToken("providerid");
+        //        }
+        //    if (pro.SelectToken("providertype") != null)
+        //    {
+        //            ProviderType = (string)pro.SelectToken("providertype");
+        //        }
+        //    if (pro.SelectToken("providertypeid") != null)
+        //    {
+        //           ProviderTypeId = (string)pro.SelectToken("providertypeid");
+        //        }
+        //    if (pro.SelectToken("schedulingname") != null)
+        //    {
+        //           SchedulingName = (string)pro.SelectToken("schedulingname");
+        //        }
+        //    if (pro.SelectToken("specialty") != null)
+        //    {
+        //           Specialty = (string)pro.SelectToken("specialty");
+        //        }
+        //    if (pro.SelectToken("supervisingproviderid") != null)
+        //    {
+        //           SupervisingProviderID = (int)pro.SelectToken("supervisingproviderid");
+        //        }
+        //    if (pro.SelectToken("supervisingproviderusername") != null)
+        //    {
+        //          SupervisingProviderUserName = (string)pro.SelectToken("supervisingproviderusername");
+        //      }
 
-                db.ImportAtheanProvider(AcceptingnewPatients,
-                                            AnsinameCode,
-                                            AnsispecialtyCode,
-                                            Billable,
-                                            CreateenCounteronCheckin,
-                                            DisplayName,
-                                            EntityType,
-                                            FirstName,
-                                            HideInPortal,
-                                            LastName,
-                                            ProviderID,
-                                            ProviderType,
-                                            ProviderTypeId,
-                                            SchedulingName,
-                                            Specialty,
-                                            SupervisingProviderID,
-                                            SupervisingProviderUserName,
-                                            CreatedBy);
+        //        db.ImportAtheanProvider(AcceptingnewPatients,
+        //                                    AnsinameCode,
+        //                                    AnsispecialtyCode,
+        //                                    Billable,
+        //                                    CreateenCounteronCheckin,
+        //                                    DisplayName,
+        //                                    EntityType,
+        //                                    FirstName,
+        //                                    HideInPortal,
+        //                                    LastName,
+        //                                    ProviderID,
+        //                                    ProviderType,
+        //                                    ProviderTypeId,
+        //                                    SchedulingName,
+        //                                    Specialty,
+        //                                    SupervisingProviderID,
+        //                                    SupervisingProviderUserName,
+        //                                    CreatedBy);
 
-            }
+        //    }
 
-            db.SaveChanges();
-        }
+        //    db.SaveChanges();
+        //}
 
      
         // JsonValue providers = api.GET("/providers ");
@@ -293,151 +294,151 @@ public class Testing
             JsonValue patient = api.GET("/patients/" + i);
             var jsonString1 = patient.ToString();
             jsonString1 = jsonString1.TrimStart(new char[] { '[' }).TrimEnd(new char[] { ']' });
-          //  path = "../../patient_" + i + ".json";
-          //  File.WriteAllText(path, jsonString1);
+            path = "../../patient_" + i + ".json";
+            File.WriteAllText(path, jsonString1);
             var jsonString2 = JObject.Parse(jsonString1);
 
-            string confidentialitycode = string.Empty;
-            string driverslicenseexpirationdate = string.Empty;
-            string driverslicensenumber = string.Empty;
-            short driverslicensestateid = 0;
-            string homeboundyn = string.Empty;
-            string deceaseddate = string.Empty;
-            string industrycode = string.Empty;
-            string donotcallyn = string.Empty;
-            string ethnicitycode = string.Empty;
-            string language6392code = string.Empty;
-            string race = string.Empty;
-            string firstappointment = string.Empty;
-            string primaryprovider = string.Empty;
-            string lastappointment = string.Empty;
-            string primarydepartmentid = string.Empty;
-            string status = string.Empty;
-            string hierarchicalcode = string.Empty;
-            string lastemail = string.Empty;
-            string emailexistsyn = string.Empty;
-            string occupationcode = string.Empty;
-            string patientid = string.Empty;
-            string firstname =string.Empty;
-            string middlename = string.Empty;
-            string lastname = string.Empty;
-            string suffix = string.Empty;
-            string preferredname = string.Empty;
-            string address1 = string.Empty;
-            string address2 = string.Empty;
-            string city = string.Empty;
-            string state = string.Empty;
-            string zip = string.Empty;
-            string countrycode = string.Empty;
-            string countrycode3166 = string.Empty;
-            string homephone = string.Empty;
-            string mobilephone = string.Empty;
-            string hasmobileyn = string.Empty;
-            string workphone = string.Empty;
-            string email = string.Empty;
-            string ssn = string.Empty;
-            string racename = string.Empty;
-            string sex = string.Empty;
-            string dob = string.Empty;
+            //string confidentialitycode = string.Empty;
+            //string driverslicenseexpirationdate = string.Empty;
+            //string driverslicensenumber = string.Empty;
+            //short driverslicensestateid = 0;
+            //string homeboundyn = string.Empty;
+            //string deceaseddate = string.Empty;
+            //string industrycode = string.Empty;
+            //string donotcallyn = string.Empty;
+            //string ethnicitycode = string.Empty;
+            //string language6392code = string.Empty;
+            //string race = string.Empty;
+            //string firstappointment = string.Empty;
+            //string primaryprovider = string.Empty;
+            //string lastappointment = string.Empty;
+            //string primarydepartmentid = string.Empty;
+            //string status = string.Empty;
+            //string hierarchicalcode = string.Empty;
+            //string lastemail = string.Empty;
+            //string emailexistsyn = string.Empty;
+            //string occupationcode = string.Empty;
+            //string patientid = string.Empty;
+            //string firstname =string.Empty;
+            //string middlename = string.Empty;
+            //string lastname = string.Empty;
+            //string suffix = string.Empty;
+            //string preferredname = string.Empty;
+            //string address1 = string.Empty;
+            //string address2 = string.Empty;
+            //string city = string.Empty;
+            //string state = string.Empty;
+            //string zip = string.Empty;
+            //string countrycode = string.Empty;
+            //string countrycode3166 = string.Empty;
+            //string homephone = string.Empty;
+            //string mobilephone = string.Empty;
+            //string hasmobileyn = string.Empty;
+            //string workphone = string.Empty;
+            //string email = string.Empty;
+            //string ssn = string.Empty;
+            //string racename = string.Empty;
+            //string sex = string.Empty;
+            //string dob = string.Empty;
 
 
-            using (AetheaProviderEntities db = new AetheaProviderEntities())
-            {
-                if (jsonString2.SelectToken("confidentialitycode") != null)
-                    confidentialitycode = jsonString2.SelectToken("confidentialitycode").ToString();
-                if (jsonString2.SelectToken("driverslicenseexpirationdate") != null)
-                    driverslicenseexpirationdate = jsonString2.SelectToken("driverslicenseexpirationdate").ToString();
-                if (jsonString2.SelectToken("driverslicensenumber") != null)
-                    driverslicensenumber = jsonString2.SelectToken("driverslicensenumber").ToString();
-                if (jsonString2.SelectToken("driverslicensestateid") != null)
-                    driverslicensestateid = Convert.ToInt16(jsonString2.SelectToken("driverslicensestateid"));
-                if (jsonString2.SelectToken("mhoeboundyn") != null)
-                    homeboundyn = jsonString2.SelectToken("mhoeboundyn").ToString();
-                if (jsonString2.SelectToken("deceaseddate") != null)
-                    deceaseddate = jsonString2.SelectToken("deceaseddate").ToString();
-                if (jsonString2.SelectToken("industrycode") != null)
-                    industrycode = jsonString2.SelectToken("industrycode").ToString();
-                if (jsonString2.SelectToken("donotcallyn") != null)
-                    donotcallyn = jsonString2.SelectToken("donotcallyn").ToString();
-                if (jsonString2.SelectToken("ethnicitycode") != null)
-                    ethnicitycode = jsonString2.SelectToken("ethnicitycode").ToString();
-                if (jsonString2.SelectToken("language6392code") != null)
-                    language6392code = jsonString2.SelectToken("language6392code").ToString();
-                if (jsonString2.SelectToken("race") != null)
-                    race = jsonString2.SelectToken("race").ToString();
-                if (jsonString2.SelectToken("firstappointment") != null)
-                    firstappointment = jsonString2.SelectToken("firstappointment").ToString();
-                if (jsonString2.SelectToken("primaryprovider") != null)
-                    primaryprovider = jsonString2.SelectToken("primaryprovider").ToString();
-                if (jsonString2.SelectToken("lastappointment") != null)
-                    lastappointment = jsonString2.SelectToken("lastappointment").ToString();
-                if (jsonString2.SelectToken("primarydepartmentid") != null)
-                    primarydepartmentid = jsonString2.SelectToken("primarydepartmentid").ToString();
-                if (jsonString2.SelectToken("status") != null)
-                    status = jsonString2.SelectToken("status").ToString();
-                if (jsonString2.SelectToken("hierarchicalcode") != null)
-                    hierarchicalcode = jsonString2.SelectToken("hierarchicalcode").ToString();
-                if (jsonString2.SelectToken("lastemail") != null)
-                    lastemail = jsonString2.SelectToken("lastemail").ToString();
-                if (jsonString2.SelectToken("emailexistsyn") != null)
-                    emailexistsyn = jsonString2.SelectToken("emailexistsyn").ToString();
-                if (jsonString2.SelectToken("occupationcode") != null)
-                    occupationcode = jsonString2.SelectToken("occupationcode").ToString();
-                if (jsonString2.SelectToken("patientid") != null)
-                    patientid = jsonString2.SelectToken("patientid").ToString();
-                if (jsonString2.SelectToken("firstname") != null)
-                    firstname = jsonString2.SelectToken("firstname").ToString();
-                if (jsonString2.SelectToken("middlename") != null)
-                    middlename = jsonString2.SelectToken("middlename").ToString();
-                if (jsonString2.SelectToken("lastname") != null)
-                    lastname = jsonString2.SelectToken("lastname").ToString();
-                if (jsonString2.SelectToken("suffix") != null)
-                    suffix = jsonString2.SelectToken("suffix").ToString();
-                if (jsonString2.SelectToken("preferredname") != null)
-                    preferredname = jsonString2.SelectToken("preferredname").ToString();
-                if (jsonString2.SelectToken("address1") != null)
-                    address1 = jsonString2.SelectToken("address1").ToString();
-                if (jsonString2.SelectToken("address2") != null)
-                    address2 = jsonString2.SelectToken("address2").ToString();
-                if (jsonString2.SelectToken("city") != null)
-                    city = jsonString2.SelectToken("city").ToString();
-                if (jsonString2.SelectToken("state") != null)
-                    state = jsonString2.SelectToken("state").ToString();
-                if (jsonString2.SelectToken("zip") != null)
-                    zip = jsonString2.SelectToken("zip").ToString();
-                if (jsonString2.SelectToken("countrycode") != null)
-                    countrycode = jsonString2.SelectToken("countrycode").ToString();
-                if (jsonString2.SelectToken("countrycode3166") != null)
-                    countrycode3166 = jsonString2.SelectToken("countrycode3166").ToString();
-                if (jsonString2.SelectToken("homephone") != null)
-                    homephone = jsonString2.SelectToken("homephone").ToString();
-                if (jsonString2.SelectToken("mobilephone") != null)
-                    mobilephone = jsonString2.SelectToken("mobilephone").ToString();
-                if (jsonString2.SelectToken("hasmobileyn") != null)
-                    hasmobileyn = jsonString2.SelectToken("hasmobileyn").ToString();
-                if (jsonString2.SelectToken("workphone") != null)
-                    workphone = jsonString2.SelectToken("workphone").ToString();
-                if (jsonString2.SelectToken("email") != null)
-                    email = jsonString2.SelectToken("email").ToString();
-                if (jsonString2.SelectToken("ssn") != null)
-                    ssn = jsonString2.SelectToken("ssn").ToString();
-                if (jsonString2.SelectToken("racename") != null)
-                    racename = jsonString2.SelectToken("racename").ToString();
-                if (jsonString2.SelectToken("sex") != null)
-                    sex = jsonString2.SelectToken("sex").ToString();
-                if (jsonString2.SelectToken("dob") != null)
-                    dob = jsonString2.SelectToken("dob").ToString();
+            //using (AetheaProviderEntities db = new AetheaProviderEntities())
+            //{
+            //    if (jsonString2.SelectToken("confidentialitycode") != null)
+            //        confidentialitycode = jsonString2.SelectToken("confidentialitycode").ToString();
+            //    if (jsonString2.SelectToken("driverslicenseexpirationdate") != null)
+            //        driverslicenseexpirationdate = jsonString2.SelectToken("driverslicenseexpirationdate").ToString();
+            //    if (jsonString2.SelectToken("driverslicensenumber") != null)
+            //        driverslicensenumber = jsonString2.SelectToken("driverslicensenumber").ToString();
+            //    if (jsonString2.SelectToken("driverslicensestateid") != null)
+            //        driverslicensestateid = Convert.ToInt16(jsonString2.SelectToken("driverslicensestateid"));
+            //    if (jsonString2.SelectToken("mhoeboundyn") != null)
+            //        homeboundyn = jsonString2.SelectToken("mhoeboundyn").ToString();
+            //    if (jsonString2.SelectToken("deceaseddate") != null)
+            //        deceaseddate = jsonString2.SelectToken("deceaseddate").ToString();
+            //    if (jsonString2.SelectToken("industrycode") != null)
+            //        industrycode = jsonString2.SelectToken("industrycode").ToString();
+            //    if (jsonString2.SelectToken("donotcallyn") != null)
+            //        donotcallyn = jsonString2.SelectToken("donotcallyn").ToString();
+            //    if (jsonString2.SelectToken("ethnicitycode") != null)
+            //        ethnicitycode = jsonString2.SelectToken("ethnicitycode").ToString();
+            //    if (jsonString2.SelectToken("language6392code") != null)
+            //        language6392code = jsonString2.SelectToken("language6392code").ToString();
+            //    if (jsonString2.SelectToken("race") != null)
+            //        race = jsonString2.SelectToken("race").ToString();
+            //    if (jsonString2.SelectToken("firstappointment") != null)
+            //        firstappointment = jsonString2.SelectToken("firstappointment").ToString();
+            //    if (jsonString2.SelectToken("primaryprovider") != null)
+            //        primaryprovider = jsonString2.SelectToken("primaryprovider").ToString();
+            //    if (jsonString2.SelectToken("lastappointment") != null)
+            //        lastappointment = jsonString2.SelectToken("lastappointment").ToString();
+            //    if (jsonString2.SelectToken("primarydepartmentid") != null)
+            //        primarydepartmentid = jsonString2.SelectToken("primarydepartmentid").ToString();
+            //    if (jsonString2.SelectToken("status") != null)
+            //        status = jsonString2.SelectToken("status").ToString();
+            //    if (jsonString2.SelectToken("hierarchicalcode") != null)
+            //        hierarchicalcode = jsonString2.SelectToken("hierarchicalcode").ToString();
+            //    if (jsonString2.SelectToken("lastemail") != null)
+            //        lastemail = jsonString2.SelectToken("lastemail").ToString();
+            //    if (jsonString2.SelectToken("emailexistsyn") != null)
+            //        emailexistsyn = jsonString2.SelectToken("emailexistsyn").ToString();
+            //    if (jsonString2.SelectToken("occupationcode") != null)
+            //        occupationcode = jsonString2.SelectToken("occupationcode").ToString();
+            //    if (jsonString2.SelectToken("patientid") != null)
+            //        patientid = jsonString2.SelectToken("patientid").ToString();
+            //    if (jsonString2.SelectToken("firstname") != null)
+            //        firstname = jsonString2.SelectToken("firstname").ToString();
+            //    if (jsonString2.SelectToken("middlename") != null)
+            //        middlename = jsonString2.SelectToken("middlename").ToString();
+            //    if (jsonString2.SelectToken("lastname") != null)
+            //        lastname = jsonString2.SelectToken("lastname").ToString();
+            //    if (jsonString2.SelectToken("suffix") != null)
+            //        suffix = jsonString2.SelectToken("suffix").ToString();
+            //    if (jsonString2.SelectToken("preferredname") != null)
+            //        preferredname = jsonString2.SelectToken("preferredname").ToString();
+            //    if (jsonString2.SelectToken("address1") != null)
+            //        address1 = jsonString2.SelectToken("address1").ToString();
+            //    if (jsonString2.SelectToken("address2") != null)
+            //        address2 = jsonString2.SelectToken("address2").ToString();
+            //    if (jsonString2.SelectToken("city") != null)
+            //        city = jsonString2.SelectToken("city").ToString();
+            //    if (jsonString2.SelectToken("state") != null)
+            //        state = jsonString2.SelectToken("state").ToString();
+            //    if (jsonString2.SelectToken("zip") != null)
+            //        zip = jsonString2.SelectToken("zip").ToString();
+            //    if (jsonString2.SelectToken("countrycode") != null)
+            //        countrycode = jsonString2.SelectToken("countrycode").ToString();
+            //    if (jsonString2.SelectToken("countrycode3166") != null)
+            //        countrycode3166 = jsonString2.SelectToken("countrycode3166").ToString();
+            //    if (jsonString2.SelectToken("homephone") != null)
+            //        homephone = jsonString2.SelectToken("homephone").ToString();
+            //    if (jsonString2.SelectToken("mobilephone") != null)
+            //        mobilephone = jsonString2.SelectToken("mobilephone").ToString();
+            //    if (jsonString2.SelectToken("hasmobileyn") != null)
+            //        hasmobileyn = jsonString2.SelectToken("hasmobileyn").ToString();
+            //    if (jsonString2.SelectToken("workphone") != null)
+            //        workphone = jsonString2.SelectToken("workphone").ToString();
+            //    if (jsonString2.SelectToken("email") != null)
+            //        email = jsonString2.SelectToken("email").ToString();
+            //    if (jsonString2.SelectToken("ssn") != null)
+            //        ssn = jsonString2.SelectToken("ssn").ToString();
+            //    if (jsonString2.SelectToken("racename") != null)
+            //        racename = jsonString2.SelectToken("racename").ToString();
+            //    if (jsonString2.SelectToken("sex") != null)
+            //        sex = jsonString2.SelectToken("sex").ToString();
+            //    if (jsonString2.SelectToken("dob") != null)
+            //        dob = jsonString2.SelectToken("dob").ToString();
 
 
-                CreatedBy = string.Empty;
-                db.ImportAtheanPatient(
-                    confidentialitycode, driverslicenseexpirationdate, driverslicensenumber, driverslicensestateid, homeboundyn,
-                    deceaseddate, industrycode, donotcallyn, ethnicitycode, language6392code, race, firstappointment, primarydepartmentid,
-                    lastappointment, primarydepartmentid, status, hierarchicalcode, lastemail, emailexistsyn, occupationcode, patientid,
-                    firstname, middlename, lastname, suffix, preferredname, address1, address2, city, state, zip, countrycode, countrycode3166,
-                    homephone, mobilephone, hasmobileyn, workphone, email, ssn, racename, sex, dob, "BoomiDbUser");
-                db.SaveChanges();
-            }
+               
+            //    db.ImportAtheanPatient(
+            //        confidentialitycode, driverslicenseexpirationdate, driverslicensenumber, driverslicensestateid, homeboundyn,
+            //        deceaseddate, industrycode, donotcallyn, ethnicitycode, language6392code, race, firstappointment, primarydepartmentid,
+            //        lastappointment, primarydepartmentid, status, hierarchicalcode, lastemail, emailexistsyn, occupationcode, patientid,
+            //        firstname, middlename, lastname, suffix, preferredname, address1, address2, city, state, zip, countrycode, countrycode3166,
+            //        homephone, mobilephone, hasmobileyn, workphone, email, ssn, racename, sex, dob, "BoomiDbUser");
+            //    db.SaveChanges();
+            //}
 
         }
 
